@@ -1,0 +1,11 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_DB: fraud_agent
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5433:5432"]
+    volumes: [fraud_agent_pg:/var/lib/postgresql/data]
+volumes:
+  fraud_agent_pg:
